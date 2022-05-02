@@ -33,28 +33,28 @@ $(function(){
 		e.preventDefault();
 	});
 	
-    $(document).find("#load .img").hover(
-        function(){
+	
+    $(document).on('mousehover', '#load .img', function(){
         console.log("hover!");
-		    if(road == true){
-			    $(this).stop(false,true,false).animate({opacity:1},j);
-    		}
-	    	$('#mensaje').stop(false,true,false).fadeIn('fast');
-	    },
-        function(){
+	    if(road == true){
+		    $(this).stop(false,true,false).animate({opacity:1},j);
+    	}
+	   	$('#mensaje').stop(false,true,false).fadeIn('fast');
+	});
+
+ 
+    $(document).on('mouseleave', '#load .img', function(){
         console.log("ya no hover!");
-		    if(road == true){
-			    $(this).stop(false,true,false).animate({opacity:0.1},j);
-    		}
-	    	$('#mensaje').stop(false,true,false).fadeOut('slow');
-	    }
-    );
+		if(road == true){
+		    $(this).stop(false,true,false).animate({opacity:0.1},j);
+    	}
+	    $('#mensaje').stop(false,true,false).fadeOut('slow');
+	});
 	
     $(document).on('click','#load .img',function(){
-        console.log("click!!!")
 		$('#bg').fadeIn(200);
         const $imgDem = $('img', this);
-		const dir = $imgDem.prop('src').replace('png', 'jpg').replace('soc', 'soc/original');
+		const dir = $imgDem.prop('src').replace('png', 'jpg').replace('soc', 'soc/originales');
 		let i = 0;
 		
         const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });
@@ -104,7 +104,7 @@ $(function(){
 		$(this).css({'color':'#67f6ff'});	
 	},function(){
 		$(this).css({'color':'#ba9763'});
-	}); // fin show
+	});
 	
 });// fin jQuery
 function init(){
@@ -121,7 +121,8 @@ function init(){
             $cont.append($divImg);
             getClassData(i, $divImg);
         });
-    });
+    })
+    $cont.append('<div class="clear"></div>');
 }
 function getClassData(i, element) {
 		if(i == 0){

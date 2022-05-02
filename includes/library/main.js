@@ -35,16 +35,12 @@ $(function(){
 	
 	
     $(document).on('mouseenter', '#load .img', function(){
-        console.log("hover!");
 	    if(road == true){
 		    $(this).stop(false,true,false).animate({opacity:1},j);
     	}
 	   	$('#mensaje').stop(false,true,false).fadeIn('fast');
 	});
-
- 
     $(document).on('mouseleave', '#load .img', function(){
-        console.log("ya no hover!");
 		if(road == true){
 		    $(this).stop(false,true,false).animate({opacity:0.1},j);
     	}
@@ -60,8 +56,8 @@ $(function(){
         const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });
 		$('#biblio .alt').html($img);
 		$('#biblio').fadeIn(250);
-		var wid = $img.width();
-		var hei = $img.height();
+		var wid = $('#biblio .alt img').width();
+		var hei = $('#biblio .alt img').height();
 		var left = wid+6;
 		left = left/2;
 		var top = hei+6;

@@ -189,8 +189,8 @@ function init(){
 
     $.getJSON( "/images.json", function( data ) {
         $.each(data, (i, e) => {
-            console.log({e});
-            container.append($("<img />", { "src": e }));
+            console.log({i, e});
+            $('#images_soc', document).append($("<img />", { "src": e }));
         })
     });
 /*

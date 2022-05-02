@@ -51,8 +51,6 @@ $(function(){
 		$('#bg').fadeIn(200);
         const $imgDem = $('img', this);
 		const dir = $imgDem.prop('src').replace('png', 'jpg').replace('soc', 'soc/originales');
-		let i = 0;
-		
         const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });
 		$('#biblio .alt').html($img);
 		$('#biblio').fadeIn(250);
@@ -62,7 +60,7 @@ $(function(){
 		left = left/2;
 		var top = hei+6;
 		top = top/2;
-		$img.css({'width':wid+'px'})
+		//$img.css({'width':wid+'px'})
 		$('#biblio').css({'margin-left': -left+'px', 'margin-top': -top+'px', 'top': '50%', 'left': '50%'});
 		
 	});

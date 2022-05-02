@@ -186,8 +186,7 @@ function init(){
  37                 }
  38              ?>
  * */
-
-    $.getJSON( "/images.json", function( data ) {
+    $.getJSON( "ihttps://sebascode.github.io/images.json", function( data ) {
         $.each(data, (i, e) => {
             console.log({i, e});
             $('#images_soc', document).append($("<img />", { "src": e }));

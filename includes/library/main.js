@@ -33,29 +33,29 @@ $(function(){
 		e.preventDefault();
 	});
 	
-    $(document).find("#load .img").on({
-        mouseover: function(){
+    $(document).find("#load .img").hover(
+        function(){
 		    if(road == true){
 			    $(this).stop(false,true,false).animate({opacity:1},j);
     		}
 	    	$('#mensaje').stop(false,true,false).fadeIn('fast');
 	    },
-        mouseout: function(){
+        function(){
 		    if(road == true){
 			    $(this).stop(false,true,false).animate({opacity:0.1},j);
     		}
 	    	$('#mensaje').stop(false,true,false).fadeOut('slow');
 	    }
-    });
+    );
 	
     $(document).on('click','#load .img',function(){
         console.log("click!!!")
 		$('#bg').fadeIn(200);
-		var dir = $('img', this).attr('alt');
+		var dir = $('img', this).prop('src');
 		dir = dir.replace('png', 'jpg');
 		var i = 0;
 		
-		$('#biblio .alt').html('<img class="laod" src='+dir+' style="max-width:760px; max-height:560px;" />');
+		$('#biblio .alt').html('<img class="load" src='+dir+' style="max-width:760px; max-height:560px;" />');
 		$('#biblio').fadeIn(250);
 		var wid = $('.laod').width();
 		var hei = $('.laod').height();

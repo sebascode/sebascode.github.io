@@ -54,13 +54,12 @@ $(function(){
         const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });
 		$('#biblio .alt').html($img);
 		$('#biblio').fadeIn(250);
-		var wid = $('#biblio .alt img').width();
-		var hei = $('#biblio .alt img').height();
-		var left = wid+6;
-		left = left/2;
-		var top = hei+6;
-		top = top/2;
-		//$img.css({'width':wid+'px'})
+		const wid = $('#biblio .alt img').width();
+		const hei = $('#biblio .alt img').height();
+		const left = (wid+6)/2;
+		const top = (hei+6)/2;
+        console.log({wid,hei,left,top})
+        $img.css({'width':wid+'px'})
 		$('#biblio').css({'margin-left': -left+'px', 'margin-top': -top+'px', 'top': '50%', 'left': '50%'});
 		
 	});

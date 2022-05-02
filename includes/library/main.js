@@ -52,8 +52,8 @@ $(function(){
     $(document).on('click','#load .img',function(){
         console.log("click!!!")
 		$('#bg').fadeIn(200);
-		const dir = $('img', this).prop('src');
-		dir = dir.replace('png', 'jpg').replace('soc', 'soc/original');
+        const $imgDem = $('img', this);
+		const dir = $imgDem.prop('src').replace('png', 'jpg').replace('soc', 'soc/original');
 		let i = 0;
 		
         const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });

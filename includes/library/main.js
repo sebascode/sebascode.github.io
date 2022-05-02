@@ -34,6 +34,7 @@ $(function(){
 	});
 	
     $(document).find("#load .img").hover(
+        console.log("hover!");
         function(){
 		    if(road == true){
 			    $(this).stop(false,true,false).animate({opacity:1},j);
@@ -51,22 +52,24 @@ $(function(){
     $(document).on('click','#load .img',function(){
         console.log("click!!!")
 		$('#bg').fadeIn(200);
-		var dir = $('img', this).prop('src');
-		dir = dir.replace('png', 'jpg');
-		var i = 0;
+		const dir = $('img', this).prop('src');
+		dir = dir.replace('png', 'jpg').replace('soc', 'soc/original');
+		let i = 0;
 		
-		$('#biblio .alt').html('<img class="load" src='+dir+' style="max-width:760px; max-height:560px;" />');
+        const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });
+		$('#biblio .alt').html($img);
 		$('#biblio').fadeIn(250);
-		var wid = $('.laod').width();
-		var hei = $('.laod').height();
+		var wid = $img.width();
+		var hei = $img.height();
 		var left = wid+6;
 		left = left/2;
 		var top = hei+6;
 		top = top/2;
-		$('.laod').css({'width':wid+'px'})
+		$img.css({'width':wid+'px'})
 		$('#biblio').css({'margin-left': -left+'px', 'margin-top': -top+'px', 'top': '50%', 'left': '50%'});
 		
-	});//fin each & img.selection
+	});
+
 	$('#x , #bg').click(function(){
 		$('#biblio').fadeOut(200);
 		$('#bg').fadeOut(200);

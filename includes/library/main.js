@@ -186,29 +186,17 @@ function init(){
  37                 }
  38              ?>
  * */
+
+    const $cont = $('#images_soc', document);
     $.getJSON( "/images.json", function( data ) {
         $.each(data, (i, e) => {
-            console.log({i, e});
-            $('#images_soc', document).append($("<img />", { "src": "/includes/images/soc/"+e }));
+            const $divImg = $('<div />', { "class": "img" });
+            const $divCont = $('<div />', { "class": "image" });
+
+            $divCont.append($("<img />", { "src": "/includes/images/soc/"+e }));
+            $divImg.append($divCont);
+
+            $cont.append($divImg);
         })
     });
-/*
-    $.each(arrImg, function(i, img){
-        const dir = "includes/images/soc/";
-        const container = $('#images_soc', document);
-    
-        var img = new Image();
-        img.src = dir+img+'.png';
-            
-        img.onerror = function() {
-            img.src = dir+img+'.jpg';
-            img.onerror = function(){
-                alert("error, no se encuentra ni como jpg ni como png.");
-            };
-        };
-        img.onload = function() {
-            container.append(img);
-        }
-    });
-    */
 }

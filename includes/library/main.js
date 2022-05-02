@@ -188,10 +188,12 @@ function init(){
  * */
 
     $.getJSON( "/images.json", function( data ) {
-        console.log(data);
-        container.append($("<img />", { "src": data }));
+        $.each(data, (i, e) => {
+            console.log({e});
+            container.append($("<img />", { "src": e }));
+        })
     });
-
+/*
     $.each(arrImg, function(i, img){
         const dir = "includes/images/soc/";
         const container = $('#images_soc', document);
@@ -209,4 +211,5 @@ function init(){
             container.append(img);
         }
     });
+    */
 }

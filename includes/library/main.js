@@ -34,14 +34,15 @@ $(function(){
 	});
 	
     $(document).find("#load .img").hover(
-        console.log("hover!");
         function(){
+        console.log("hover!");
 		    if(road == true){
 			    $(this).stop(false,true,false).animate({opacity:1},j);
     		}
 	    	$('#mensaje').stop(false,true,false).fadeIn('fast');
 	    },
         function(){
+        console.log("ya no hover!");
 		    if(road == true){
 			    $(this).stop(false,true,false).animate({opacity:0.1},j);
     		}

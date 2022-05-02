@@ -54,8 +54,8 @@ $(function(){
         const $img = $("<img />", { "class": "laod", "src": dir, "style": "max-width:760px; max-height:560px;" });
 		$('#biblio .alt').html($img);
 		$('#biblio').fadeIn(250);
-		const wid = $('#biblio .alt img').width();
-		const hei = $('#biblio .alt img').height();
+		const wid = $('.laod').width();
+		const hei = $('.laod').height();
 		const left = (wid+6)/2;
 		const top = (hei+6)/2;
         console.log({wid,hei,left,top})

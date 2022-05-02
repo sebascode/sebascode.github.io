@@ -207,16 +207,4 @@ function init(){
             }
         }
     });
-
-
-    var img = new Image();
-    img.src = path_to_image;
-
-    img.onerror = function() {
-        // any logic in case of error
-        alert("error en imagen");
-    };
-    img.onload = function() {
-        container.append(img);
-    };
 }

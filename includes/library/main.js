@@ -59,6 +59,7 @@ $(function(){
 		const left = (wid+6)/2;
 		const top = (hei+6)/2;
         console.log({wid,hei,left,top})
+        console.log("width:", $img.width(), "height:", $img.height());
         //$img.css({'width':wid+'px'})
 		$('#biblio').css({'margin-left': -left+'px', 'margin-top': -top+'px', 'top': '50%', 'left': '50%'});
 		

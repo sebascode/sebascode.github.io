@@ -110,6 +110,7 @@ function init(){
             const $a = $('<a />', { "href": "/includes/images/soc/"+e });
             
             $a.append($("<img />", { "src": "/includes/images/soc/"+e  }));
+            $a.append($("<img />", { "src": "/includes/images/soc/originales/"+e, "style": "display:none;" }));
             $divCont.append($a);
             $divImg.append($divCont);
             $cont.append($divImg);

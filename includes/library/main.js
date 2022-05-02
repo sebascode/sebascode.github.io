@@ -34,7 +34,7 @@ $(function(){
 	});
 	
 	
-    $(document).on('mousehover', '#load .img', function(){
+    $(document).on('mouseenter', '#load .img', function(){
         console.log("hover!");
 	    if(road == true){
 		    $(this).stop(false,true,false).animate({opacity:1},j);

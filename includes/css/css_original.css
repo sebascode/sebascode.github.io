@@ -96,7 +96,7 @@ ul, li, dl, dt, dd {
 	padding: 0 0 0 100%;
 	position: relative;
 }
-#data_wrapper * {text-align: left; height:1100px; width:1205px;}
+#data_wrapper * {text-align: left;}
 #load {
 	position: absolute;
 	top: -67px;

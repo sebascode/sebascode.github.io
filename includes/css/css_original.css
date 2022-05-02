@@ -3,11 +3,6 @@
 
 @font-face {
     font-family: 'Maxlf';
-    src: url('http://gorohov.name/fonts/max-light-webfont.eot');
-    src: url('http://gorohov.name/fonts/max-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('http://gorohov.name/fonts/max-light-webfont.woff') format('woff'),
-         url('http://gorohov.name/fonts/max-light-webfont.ttf') format('truetype'),
-         url('http://gorohov.name/fonts/max-light-webfont.svg#Maxlf') format('svg');
     font-weight: normal;
     font-style: normal;
 }

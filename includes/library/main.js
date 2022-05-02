@@ -33,17 +33,20 @@ $(function(){
 		e.preventDefault();
 	});
 	
-	$('#load .img', document).hover(function(){
-		if(road == true){
-			$(this).stop(false,true,false).animate({opacity:1},j);
-		}
-		$('#mensaje').stop(false,true,false).fadeIn('fast');
-	},function(){
-		if(road == true){
-			$(this).stop(false,true,false).animate({opacity:0.1},j);
-		}
-		$('#mensaje').stop(false,true,false).fadeOut('slow');
-	});
+    $('#load').find(".img").on({
+        mouseover: function(){
+		    if(road == true){
+			    $(this).stop(false,true,false).animate({opacity:1},j);
+    		}
+	    	$('#mensaje').stop(false,true,false).fadeIn('fast');
+	    },
+        mouseout: function(){
+		    if(road == true){
+			    $(this).stop(false,true,false).animate({opacity:0.1},j);
+    		}
+	    	$('#mensaje').stop(false,true,false).fadeOut('slow');
+	    }
+    });
 	
     $(document).on('click','#load .img',function(){
         console.log("click!!!")

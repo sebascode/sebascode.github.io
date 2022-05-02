@@ -195,6 +195,7 @@ function init(){
         success: function (data) {
 
             alert(data);
+            console.log({data});
 
             var img = new Image();
             img.src = data;

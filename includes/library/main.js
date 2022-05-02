@@ -21,19 +21,19 @@ $(function(){
     
     init();
 
-	$('#load .img').stop(false,true,false).animate({opacity:1},j,function(){road = false;});
+	$('#load .img', document).stop(false,true,false).animate({opacity:1},j,function(){road = false;});
 	function marco(){
-		$('#load .img').stop(false,true,false).delay(1400).animate({opacity:0.1},j,function(){road = true;});
+		$('#load .img', document).stop(false,true,false).delay(1400).animate({opacity:0.1},j,function(){road = true;});
 	}
 	$('#logo a.none').click(function (e) {
 		e.preventDefault();
 	});
 	
-	$('#load .img a').click(function (e) {
+	$('#load .img a', document).click(function (e) {
 		e.preventDefault();
 	});
 	
-	$('#load .img').hover(function(){
+	$('#load .img', document).hover(function(){
 		if(road == true){
 			$(this).stop(false,true,false).animate({opacity:1},j);
 		}
@@ -45,7 +45,7 @@ $(function(){
 		$('#mensaje').stop(false,true,false).fadeOut('slow');
 	});
 	
-	$('#load .img').each(function(i, e) {
+	$('#load .img', document).each(function(i, e) {
 		if(i == 0){
 			$(this).addClass('r2 c5 even_row');
 			++l;
@@ -187,15 +187,16 @@ function init(){
  38              ?>
  * */
 
-    const $cont = $('#images_soc', document);
+    const $cont = $('#load', document);
     $.getJSON( "/images.json", function( data ) {
         $.each(data, (i, e) => {
             const $divImg = $('<div />', { "class": "img" });
             const $divCont = $('<div />', { "class": "image" });
-
-            $divCont.append($("<img />", { "src": "/includes/images/soc/"+e }));
+            const $a = $('<a />', { "href": "/includes/images/soc/"+e });
+            
+            $a.append($("<img />", { "src": "/includes/images/soc/"+e  }));
+            $divCont.append($a);
             $divImg.append($divCont);
-
             $cont.append($divImg);
         })
     });

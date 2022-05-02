@@ -242,7 +242,7 @@ function init(){
             
         img.onerror = function() {
             img.src = dir+img+'.jpg';
-            img.onerror = function {
+            img.onerror = function(){
                 alert("error, no se encuentra ni como jpg ni como png.");
             };
         };

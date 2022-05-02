@@ -29,100 +29,15 @@
 <body>
 <div id="content">
 <div style="display:none">
-/*
-<?php
-                $dir = "includes/images/soc/Originales/";
-                // abrimos el directorio
-                $dr = opendir($dir); 
-                 // si hay algún error, interrumpimos
-                if (!$dr){
-                    echo "Error"; 
-                    exit();
-                }
-                //sino, seguimos la secuencia
-                else { 
-                 // leemos todo archivo del directorio hasta que no quede ninguno
-                    while (($archivo = readdir($dr)) !== false) {
-                 // menos los que sean sub-directorios
-                        if(filetype($dir . $archivo)!="dir"){
-                            //si no tienen estas extensiones, mostramos
-                            if(($archivo != "Thumbs.db") && ($archivo != ".htaccess")){ 
-                                // en el primer archivo
-                                if ($i == 0)
-                                // le asignamos la clase CSS "active", clase de la hoja de estilos
-                                    $active = " class=\"img\""; 
-                                else
-                                 // al resto, nada
-                                    $active = " class=\"img\"";
-                                // obtenemos el tama&ntilde;o de cada imagen
-                                $tam = round(filesize($dir . $archivo)/1024, 0); 
-                                //llenamos la lista, mostramos las im&aacute;genes, y su peso
-                                echo "<div".$active.">
-								<div class=\"image\">
-								<a href=\"".$dir2.$archivo."\"><img src=\"".$dir.$archivo."\" alt=\"".$dir2.$archivo."\" ><!-- tamaño: $tam kb --></a></div></div>"; 
-                                ++$i; // contador inicial  para agregar title=\"Archivo: ".$archivo."
-                            }
-                        }
-                    }
-                     // cerramos el directorio le&iacute;do
-                    closedir($dr);
-                }
-             ?>
-*/
 </div>
-  <div id="page">
+
+<div id="page">
   	<div id="logo">
     	<ul>
         	<li><a class="none" href="#" id="show">Iluminar</a></li>
         	<li><a class="none" href="#">Contacto</a></li>
         	<li><a href="timeline/">Timeline</a></li>
         </ul>
-    </div>
-    /*
-    <div id="data_wrapper">
-        <div id="load">
-            <?php
-                $dir = "includes/images/soc/";
-				$dir2 = "includes/images/soc/Originales/";
-                // abrimos el directorio
-                $dr = opendir($dir); 
-                 // si hay algún error, interrumpimos
-                if (!$dr){
-                    echo "Error"; 
-                    exit();
-                }
-                //sino, seguimos la secuencia
-                else { 
-                 // leemos todo archivo del directorio hasta que no quede ninguno
-                    while (($archivo = readdir($dr)) !== false) {
-                 // menos los que sean sub-directorios
-                        if(filetype($dir . $archivo)!="dir"){
-                            //si no tienen estas extensiones, mostramos
-                            if(($archivo != "Thumbs.db") && ($archivo != ".htaccess")){ 
-                                // en el primer archivo
-                                if ($i == 0)
-                                // le asignamos la clase CSS "active", clase de la hoja de estilos
-                                    $active = " class=\"img\""; 
-                                else
-                                 // al resto, nada
-                                    $active = " class=\"img\"";
-                                // obtenemos el tama&ntilde;o de cada imagen
-                                $tam = round(filesize($dir . $archivo)/1024, 0); 
-                                //llenamos la lista, mostramos las im&aacute;genes, y su peso
-                                echo "<div".$active.">
-								<div class=\"image\">
-								<a href=\"".$dir2.$archivo."\"><img src=\"".$dir.$archivo."\" alt=\"".$dir2.$archivo."\" ><!-- tamaño: $tam kb --></a></div></div>"; 
-                                ++$i; // contador inicial  para agregar title=\"Archivo: ".$archivo."
-                            }
-                        }
-                    }
-                     // cerramos el directorio le&iacute;do
-                    closedir($dr);
-                }
-             ?>
-             <div class="clear"></div>
-        </div>
-        */
     </div>
     
     <div id="footer">

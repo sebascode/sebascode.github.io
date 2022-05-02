@@ -1,26 +1,26 @@
-$(function(){
-	var b = [ ];
-	b[1] = 1;
-	b[2] = b[1]+4;
-	b[3] = b[2]+7;
-	b[4] = b[3]+7;
-	b[5] = b[4]+7;
-	b[6] = b[5]+6;
-	b[7] = b[6]+5;
-	b[8] = b[7]+6; // limit
-	b[9] = b[8]+6; // last
-	b[10] = b[9]+5;
-	b[11] = b[10]+4;
+const b = [ ];
+b[1] = 1;
+b[2] = b[1]+4;
+b[3] = b[2]+7;
+b[4] = b[3]+7;
+b[5] = b[4]+7;
+b[6] = b[5]+6;
+b[7] = b[6]+5;
+b[8] = b[7]+6; // limit
+b[9] = b[8]+6; // last
+b[10] = b[9]+5;
+b[11] = b[10]+4;
 	
-	road = true;
-	j = 300; // <-- timer
-	k = 2; // <-- contador de rows
-	l = 1; // <-- contador de cols
-	n = 1; 
-	m = true;
-    
+road = true;
+j = 300; // <-- timer
+k = 2; // <-- contador de rows
+l = 1; // <-- contador de cols
+n = 1; 
+m = true;
+ 
+$(function(){
+   
     init();
-
 	$('#load .img', document).stop(false,true,false).animate({opacity:1},j,function(){road = false;});
 	function marco(){
 		$('#load .img', document).stop(false,true,false).delay(1400).animate({opacity:0.1},j,function(){road = true;});
@@ -45,53 +45,8 @@ $(function(){
 		$('#mensaje').stop(false,true,false).fadeOut('slow');
 	});
 	
-	$(document).find('#load .img').each(function(i, e) {
-        console.log("======== Inicia el proceso =========")
-        console.log({i, e})
-		if(i == 0){
-			$(this).addClass('r2 c5 even_row');
-			++l;
-		}else{
-			if(i == b[n]){
-				$(this).addClass('col_ini');
-				switch(k){
-					case 2: l=4
-						break;
-					case 3: l=2
-						break;
-					case 4: l=3
-						break;
-					case 5: l=2
-						break;
-					case 6: l=3
-						break;
-					case 7: l=3
-						break;
-					case 8: l=4
-						break;
-					case 9: l=5 // last
-						break;
-					case 10: l=2
-						break;
-					case 11: l=2
-						break;
-					default: l=3
-						break;
-				}; // fin switch
-				//alert(l);
-				k=k+1;
-				++n;
-			} // fin if
-			
-			$(this).addClass('r'+k).addClass('c'+l);
-			l++;
-			
-			if(k%2 == 0){
-				$(this).addClass('even_row');
-			}else{
-			};
-		}//fin If
-    }).click(function(){
+    $(document).on('click','#load .img',function(){
+        console.log("click!!!")
 		$('#bg').fadeIn(200);
 		var dir = $('img', this).attr('alt');
 		dir = dir.replace('png', 'jpg');
@@ -117,12 +72,12 @@ $(function(){
 	var loop = true;
 	$('#logo a#show').click(function(){
 		if(m){
-			$('#load .img').stop(false,true,false).animate({opacity:1},j);
+			$('#load .img', document).stop(false,true,false).animate({opacity:1},j);
 			m=false;
 			road=false;
 			$(this).animate({'color':'#67f6ff'},j);
 		}else{
-			$('#load .img').stop(false,true,false).animate({opacity:0.1},j);
+			$('#load .img', document).stop(false,true,false).animate({opacity:0.1},j);
 			m=true;
 			road=true;
 			$(this).animate({'color':'#ba9763'},j);
@@ -145,7 +100,6 @@ $(function(){
 	}); // fin show
 	
 });// fin jQuery
-
 function init(){
 /*
  *<?php
@@ -188,7 +142,6 @@ function init(){
  37                 }
  38              ?>
  * */
-
     const $cont = $('#load', document);
     $.getJSON( "/images.json", function( data ) {
         $.each(data, (i, e) => {
@@ -200,6 +153,50 @@ function init(){
             $divCont.append($a);
             $divImg.append($divCont);
             $cont.append($divImg);
-        })
+            getClassData(i, $divImg);
+        });
     });
+}
+function getClassData(i, element) {
+        console.log("======== Inicia el proceso =========")
+        console.log({i, element})
+		if(i == 0){
+		    element.addClass('r2 c5 even_row');
+			++l;
+	    }else{
+		    if(i == b[n]){
+			    $(this).addClass('col_ini');
+			    switch(k){
+			        case 2: l=4;
+				        break;
+                    case 3: l=2;
+	    	        	break;
+    	    	    case 4: l=3;
+	    	    		break;
+    			    case 5: l=2;
+    				    break;
+    			    case 6: l=3;
+        				break;
+		    		case 7: l=3;
+	            		break;
+    			    case 8: l=4
+	    			    break;
+        			case 9: l=5;
+	        			break;
+    	    		case 10: l=2;
+	    	    		break;
+    			    case 11: l=2;
+	    			    break;
+    		    	default: l=3;
+	    		    	break;
+			    };
+    			k=k+1;
+	    		++n;
+		    }
+    		element.addClass('r'+k).addClass('c'+l);
+	    	l++;	
+		    if(k%2 == 0){
+			    element.addClass('even_row');
+		    };
+	    }
 }

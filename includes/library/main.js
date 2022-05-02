@@ -21,19 +21,19 @@ m = true;
 $(function(){
    
     init();
-	$('#load .img', document).stop(false,true,false).animate({opacity:1},j,function(){road = false;});
+	$(document).find('#load .img').stop(false,true,false).animate({opacity:1},j,function(){road = false;});
 	function marco(){
-		$('#load .img', document).stop(false,true,false).delay(1400).animate({opacity:0.1},j,function(){road = true;});
+		$(document).find('#load .img').stop(false,true,false).delay(1400).animate({opacity:0.1},j,function(){road = true;});
 	}
 	$('#logo a.none').click(function (e) {
 		e.preventDefault();
 	});
 	
-	$('#load .img a', document).click(function (e) {
+	$(document).on('click','#load .img a',function (e) {
 		e.preventDefault();
 	});
 	
-    $('#load').find(".img").on({
+    $(document).find("#load .img").on({
         mouseover: function(){
 		    if(road == true){
 			    $(this).stop(false,true,false).animate({opacity:1},j);
@@ -104,47 +104,6 @@ $(function(){
 	
 });// fin jQuery
 function init(){
-/*
- *<?php
-  1                 $dir = "includes/images/soc/";
-  2                 $dir2 = "includes/images/soc/Originales/";
-  3                 // abrimos el directorio
-  4                 $dr = opendir($dir);
-  5                  // si hay algún error, interrumpimos
-  6                 if (!$dr){
-  7                     echo "Error";
-  8                     exit();
-  9                 }
- 10                 //sino, seguimos la secuencia
- 11                 else {
- 12                  // leemos todo archivo del directorio hasta que no quede ninguno
- 13                     while (($archivo = readdir($dr)) !== false) {
- 14                  // menos los que sean sub-directorios
- 15                         if(filetype($dir . $archivo)!="dir"){
- 16                             //si no tienen estas extensiones, mostramos
- 17                             if(($archivo != "Thumbs.db") && ($archivo != ".htaccess")){
- 18                                 // en el primer archivo
- 19                                 if ($i == 0)
- 20                                 // le asignamos la clase CSS "active", clase de la hoja de estilos
- 21                                     $active = " class=\"img\"";
- 22                                 else
- 23                                  // al resto, nada
- 24                                     $active = " class=\"img\"";
- 25                                 // obtenemos el tama&ntilde;o de cada imagen
- 26                                 $tam = round(filesize($dir . $archivo)/1024, 0);
- 27                                 //llenamos la lista, mostramos las im&aacute;genes, y su peso
- 28                                 echo "<div".$active.">
- 29                                 <div class=\"image\">
- 30                                 <a href=\"".$dir2.$archivo."\"><img src=\"".$dir.$archivo."\" alt=\"".$dir2.$archivo    ."\" ><!-- tamaño: $tam kb --></a></div></div>";
- 31                                 ++$i; // contador inicial  para agregar title=\"Archivo: ".$archivo."
- 32                             }
- 33                         }
- 34                     }
- 35                      // cerramos el directorio le&iacute;do
- 36                     closedir($dr);
- 37                 }
- 38              ?>
- * */
     const $cont = $('#load', document);
     $.getJSON( "/images.json", function( data ) {
         $.each(data, (i, e) => {
@@ -161,8 +120,6 @@ function init(){
     });
 }
 function getClassData(i, element) {
-        console.log("======== Inicia el proceso =========")
-        console.log({i, element})
 		if(i == 0){
 		    element.addClass('r2 c5 even_row');
 			++l;

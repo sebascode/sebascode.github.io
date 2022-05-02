@@ -1,0 +1,163 @@
+/* CSS Document */ 
+/* SEBASCODE.CL */
+*{
+	margin: 0px;
+	padding: 0px;
+	color: #525252;
+}
+a{
+	color:inherit;
+	text-decoration:none;
+}
+body{
+	font-family: abadi,"Verdana";
+}
+.check{
+	background:url(../images/check_sprite.png);
+	background-repeat:no-repeat;
+	background-position:0px 0px;
+	border:none;
+	width:16px;
+	overflow:hidden;
+	padding:3px;
+	padding-left:24px;
+}
+.clear{
+	clear:both;
+}
+/* content */
+#content{
+	position:relative;
+	width:950px;
+	z-index:1;
+	margin:0 auto;
+}
+
+/* menu */
+menu{
+	position:fixed;
+	top:100px;
+}
+menu ul{
+	list-style-type: none;
+	font-size:14px;
+}
+menu ul li{
+	margin:8px;
+}
+menu ul li a{
+	text-transform: uppercase;
+}
+menu ul li a.ere{
+	background-position': 0px -23px;
+	color:#ea3839;
+}
+
+/* CONTENT */
+#body{
+	padding-left:195px;
+	width:755px;
+}
+#body .b img{
+	margin: 0px auto;
+}#body #dante{
+	position:relative;
+	width:350px;
+	margin:0px 0px;
+}#body div.b{
+	width:755px;
+	text-align:center;
+	font-family: klavika_lightlight, klavika_bold_capsbold, 'Verdana';
+	margin: 30px 0px 30px 0px;
+}
+#body div.b:first-child{
+	margin:0px 0px 30px 0px;
+}
+#body strong{
+	font-weight: bold;
+	font-family: klavika_boldbold, klavika_lightlight, 'Verdana';
+}
+body #bg{
+	position:absolute;
+	background:url(../images/bg-sprite.png) 0px 0px repeat;
+	background-size:200%;
+	width:100%;
+	height:100%;
+	opacity:0.2;
+	filter:alpha(opacity=20); /* For IE8 and earlier */
+	z-index:-1;
+}
+.ima{
+	float:left;
+	margin:10px;
+	width: 230px;
+	height: 130px;
+}
+#submenu{
+	display:none;
+}
+#departamento{
+	padding-top:10px;
+}
+footer{
+	background:#333533;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	height:50px;
+	z-index: 1100;
+}
+footer div{
+	width:370px;
+	margin:0 auto;
+	line-height:50px;
+	background:url(../images/footer.png) no-repeat;
+	padding:0px 0px 0px 15px;
+	background-position:left;
+	color:#9b9d9f;
+	z-index:110;
+}
+/* CONTACTO */
+label {
+    display:block;
+    margin-top:20px;
+    letter-spacing:1px;
+}
+.formulario {
+    display:block;
+    margin:0 auto;
+    width:510px;
+    color: #666666;
+    font-family:Arial;
+}
+form {
+    margin:0 auto;
+    width:400px;
+}
+ 
+input, textarea {
+    width:380px;
+    height:27px;
+    background:#666666;
+    border:2px solid #f6f6f6;
+    padding:10px;
+    margin-top:5px;
+    font-size:10px;
+    color:#ffffff;
+}
+ 
+textarea {
+    height:150px;
+}
+ 
+#submit {
+    width:85px;
+    height:35px;
+    border:none;
+    margin-top:20px;
+    cursor:pointer;
+}
+#contacto{
+	margin:0px !important;
+}

@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'Maxlf';
+    src: url('http://gorohov.name/fonts/max-light-webfont.eot');
+    src: url('http://gorohov.name/fonts/max-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://gorohov.name/fonts/max-light-webfont.woff') format('woff'),
+         url('http://gorohov.name/fonts/max-light-webfont.ttf') format('truetype'),
+         url('http://gorohov.name/fonts/max-light-webfont.svg#Maxlf') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 12px Maxlf, Tahoma, Arial, sans-serif;
+	color: #c0b98f;
+	background: #161a21 url(../images/pattern.png) center -102px;
+	background-attachment:scroll;
+	margin: 0 auto;
+	min-width: 1000px;
+}
+
+::selection {
+	background: rgb(40, 77, 68, 0.0); /* Firefox */
+	color: rgba(155, 155, 00, 0.7);
+}
+
+
+div::selection,
+ul::selection,
+li::selection,
+img::selection
+{
+	background: transparent; /* Safari */
+}
+
+::-moz-selection {
+	background: #c0b98f; /* Firefox */
+	color: #19191a;
+}
+
+a {
+	color: #ba9763;
+	text-decoration: none;
+}
+/*a:hover {color:#67f6ff} */
+img {border:0}
+a, img {outline: none}
+ul, li, dl, dt, dd {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#page {
+	height: 100%;
+	min-height: 1100px; /* data + footer */
+	position: relative;
+	overflow: hidden;
+}
+
+#logo {
+	position: absolute;
+	z-index: 2;
+	top: 30px;
+	right: 30px;
+	width: 120px;
+	background:url(../images/logo-2.png) no-repeat;
+	background-size:150px;
+	padding: 120px 60px 0 0;
+	text-align: right;
+	font-weight: bold;
+}
+
+#logo ul {
+	font-size: 11px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+#logo ul li {
+	height:18px
+}
+#logo a.active{
+	color:#67f6ff;
+}
+#data_wrapper {
+	overflow: hidden;
+	text-align: center;
+	height: 1105px;
+	padding: 0 0 0 100%;
+	position: relative;
+}
+#data_wrapper * {text-align: left}
+#load {
+	position: absolute;
+	top: -67px;
+	left: 0;
+	height: 1100px;
+	margin: 0 0 0 -602px;
+	left: 50%;
+	width: 1205px;
+}
+
+	#load .img {
+		position: absolute;
+		opacity: 0.3;
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+	}
+	#load .img.empty {padding:6px 0 0 6px;display:none}
+
+		#load .img a,
+		#load .img span {
+			display: block;
+			width: 111px; /* 117 */
+			height: 124px; /* 130 */
+			padding: 6px 0 0 6px;
+			cursor: pointer;
+			background: url(../images/cell.png) -1px 0 no-repeat;
+		}
+		#load .img a:hover,
+		#load .img.selected a {background-position: 0 -130px}
+		#load .img.selected a {
+			background-position: 0 -260px;
+			text-shadow: #09f1ef -1px -1px 0;
+		}
+
+		#load .img  h3,
+		#load .img  .date,
+		#load .img  p {display: none}
+
+	/* 105 */
+	#load .img.r1 {top:0}
+	#load .img.r2 {top:100px}
+	#load .img.r3 {top:200px}
+	#load .img.r4 {top:300px}
+	#load .img.r5 {top:400px}
+	#load .img.r6 {top:500px}
+	#load .img.r7 {top:600px}
+	#load .img.r8 {top:700px}
+	#load .img.r9 {top:800px}
+	#load .img.r10 {top:900px}
+	#load .img.r11 {top:1000px}
+
+	/* 115 */
+	#load .img.c1 {left:0}
+	#load .img.c2 {left:115px}
+	#load .img.c3 {left:230px}
+	#load .img.c4 {left:345px}
+	#load .img.c5 {left:460px}
+	#load .img.c6 {left:575px}
+	#load .img.c7 {left:690px}
+	#load .img.c8 {left:805px}
+	#load .img.c9 {left:920px}
+	#load .img.c10 {left:1035px}
+
+	/* 115 */
+	#load .img.even_row.c1 {left:58px}
+	#load .img.even_row.c2 {left:173px}
+	#load .img.even_row.c3 {left:288px}
+	#load .img.even_row.c4 {left:403px}
+	#load .img.even_row.c5 {left:518px}
+	#load .img.even_row.c6 {left:633px}
+	#load .img.even_row.c7 {left:748px}
+	#load .img.even_row.c8 {left:863px}
+	#load .img.even_row.c9 {left:978px}
+	#load .img.even_row.c10 {left:1093px}
+
+	#load .img.main {
+		opacity: 1;
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	}
+		#load .img.main a {background: url(../images/main-cell.png) -1px 0 no-repeat}
+		#load .img.main a:hover {background-position: 0 -130px}
+		#load .img.main.selected a {background-position: 0 -260px}
+		
+		#load .img.main.illustration a {background-position: -117px 0}
+		#load .img.main.illustration a:hover {background-position: -117px -130px}
+		#load .img.main.illustration.selected a {background-position: -117px -260px}
+		
+		#load .img.main.branding a {background-position: -234px 0}
+		#load .img.main.branding a:hover {background-position: -234px -130px}
+		#load .img.main.branding.selected a {background-position: -234px -260px}
+
+
+.close_page {
+	position: absolute;
+	top: 30px;
+	right: 40px;
+}
+	.close_page a {
+		display: inline-block;
+		width: 62px;
+		height: 25px;
+		background: url(../images/buttons.png) -197px 0 no-repeat;
+	}
+	.close_page a:hover {background-position: -197px -25px}
+	
+#footer {
+	height: 150px;
+	padding-top: 20px;
+	position: absolute;
+	z-index: 5;
+	width: 1000px;
+	min-width:1000px;
+	margin: -210px 0;
+	left:50%;
+	margin-left:-500px;
+}
+		#footer dl dt {
+			font-size: 17px;
+			font-weight: bold;
+			margin: 0 0 15px;
+			padding: 7px 0 0;
+			color: #e4e3d1;
+		}
+
+		#footer dl dd {
+			font-family: Maxlf, Tahoma, Arial, sans-serif;
+			font-size: 11px;
+			line-height: 20px;
+		}
+		
+.clear{clear:both}
+
+#mensaje{
+	position:fixed;
+	display:none;
+	bottom:10px;
+	width: 150px;
+	margin-left:-75px;
+	left:50%;
+}
+#biblio{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:91;
+	background:#333;
+	padding:3px;
+}
+#bg{
+	background:#000;
+	position:fixed;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:90;
+	opacity:0.7;
+	-moz-opacity:0.7;
+	-webkit-opacity:0.7;
+	cursor:pointer;
+}
+#x{
+	position:absolute;
+	font:Arial, Verdana, sans-serif;
+	top:-15px;
+	right:-15px;
+	width: 30px;
+	height:30px;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	background:#333;
+	font-weight:bold;
+	text-align:center;
+	z-index:20;
+	line-height:30px;
+}
+#x img{
+	position:relative;
+	z-index:19;
+}
+#x:hover{
+	background:#67f6ff;
+}
+
+@keyframes colorChange
+{
+from {color:#ba9763;}
+to {color:#67f6ff;}
+}
+
+@-webkit-keyframes colorChange /* Safari and Chrome */
+{
+from {color:#ba9763;}
+to {color:#67f6ff;}
+}

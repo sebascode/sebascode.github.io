@@ -187,25 +187,67 @@ function init(){
  38              ?>
  * */
 
-    const dirImages = "includes/images/soc/";
-    const container = $('#images_soc', document);
+    const arrImg = [
+        "3d_photoshopdemo",
+        "fibers",
+        "insignia_tropa",
+        "peoplemaps_1",
+        "tms_logo",
+        "3d",
+        "fin_u2",
+        "lasersheep_produccion",
+        "portaldecolegios_dem",
+        "tms",
+        "awkan",
+        "finu",
+        "logo_bz",
+        "r_peoplemaps_2",
+        "unus_cd",
+        "boeo",
+        "flyer",
+        "movein",
+        "shines",
+        "venommist",
+        "bzwallpaper",
+        "fm3t_logo",
+        "nominate",
+        "shines",
+        "venom",
+        "charriot",
+        "fm3t",
+        "nube",
+        "star_wall",
+        "wallpaper",
+        "c_venommist",
+        "golf_",
+        "technicolor",
+        "wall",
+        "distritmacul_1",
+        "happy-fitness",
+        "tigre",
+        "z_bingo",
+        "etymol",
+        "horariodeclase",
+        "pdc",
+        "tms_intranet",
+        "zebra"
+    ];
 
-    $.ajax({
-        url : dirImages,
-        success: function (data) {
-
-            alert(data);
-            console.log({data});
-
-            var img = new Image();
-            img.src = data;
+    $.each(arrImg, function(i, img){
+        const dir = "includes/images/soc/";
+        const container = $('#images_soc', document);
+    
+        var img = new Image();
+        img.src = dir+img+'.png';
             
-            img.onerror = function() {
-                alert("error en imagen");
+        img.onerror = function() {
+            img.src = dir+img+'.jpg';
+            img.onerror = function {
+                alert("error, no se encuentra ni como jpg ni como png.");
             };
-            img.onload = function() {
-                container.append(img);
-            }
+        };
+        img.onload = function() {
+            container.append(img);
         }
     });
 }

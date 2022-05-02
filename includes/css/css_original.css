@@ -96,7 +96,7 @@ ul, li, dl, dt, dd {
 	padding: 0 0 0 100%;
 	position: relative;
 }
-#data_wrapper * {text-align: left}
+#data_wrapper * {text-align: left; height:1100px; width:1205px;}
 #load {
 	position: absolute;
 	top: -67px;
@@ -204,13 +204,8 @@ ul, li, dl, dt, dd {
 #footer {
 	height: 150px;
 	padding-top: 20px;
-	position: absolute;
+	position: relative;
 	z-index: 5;
-	width: 1000px;
-	min-width:1000px;
-	margin: -210px 0;
-	left:50%;
-	margin-left:-500px;
 }
 		#footer dl dt {
 			font-size: 17px;

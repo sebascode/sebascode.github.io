@@ -3,13 +3,13 @@ b[1] = 1;
 b[2] = b[1]+4;
 b[3] = b[2]+7;
 b[4] = b[3]+7;
-b[5] = b[4]+7;
-b[6] = b[5]+6;
-b[7] = b[6]+5;
+b[5] = b[4]+8;
+b[6] = b[5]+7;
+b[7] = b[6]+6;
 b[8] = b[7]+6; // limit
-b[9] = b[8]+6; // last
-b[10] = b[9]+5;
-b[11] = b[10]+4;
+b[9] = b[8]+7; // last
+b[10] = b[9]+7;
+b[11] = b[10]+6;
 	
 road = true;
 j = 300; // <-- timer
@@ -58,9 +58,6 @@ $(function(){
 		const hei = $('.laod', document).height();
 		const left = (wid+6)/2;
 		const top = (hei+6)/2;
-        console.log({wid,hei,left,top})
-        console.log("width:", $img.width(), "height:", $img.height());
-        //$img.css({'width':wid+'px'})
 		$('#biblio').css({'margin-left': -left+'px', 'margin-top': -top+'px', 'top': '50%', 'left': '50%'});
 		
 	});

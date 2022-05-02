@@ -45,7 +45,8 @@ $(function(){
 		$('#mensaje').stop(false,true,false).fadeOut('slow');
 	});
 	
-	$('.img', '#load').each(function(i, e) {
+	$(document).find('#load .img').each(function(i, e) {
+        console.log("======== Inicia el proceso =========")
         console.log({i, e})
 		if(i == 0){
 			$(this).addClass('r2 c5 even_row');
